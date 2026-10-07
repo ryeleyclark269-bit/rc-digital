@@ -94,8 +94,11 @@ h1 {
 }
 
 /* ---------- Hero band ---------- */
-.grassing {
+.hero {
     background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+}
+
+.grassing {
     color: var(--white);
     padding: 72px 24px 32px;
     text-align: center;
@@ -108,7 +111,6 @@ h1 {
 }
 
 .contents {
-    background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
     padding: 0 24px 72px;
     text-align: center;
 }
