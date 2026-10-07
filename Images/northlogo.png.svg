@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 370">
+  <g transform="translate(98,16) scale(0.85)">
+      <circle cx="120" cy="140" r="84" fill="none" stroke="#4B5D3C" stroke-width="3"/>
+  <path d="M120,26 L127,38 L120,50 L113,38 Z" fill="#4B5D3C"/>
+  <line x1="120" y1="86" x2="120" y2="98" stroke="#4B5D3C" stroke-width="5" stroke-linecap="round"/>
+  <path d="M90,118 A30,20 0 0 1 150,118 Z" fill="#4B5D3C"/>
+  <path d="M90,118 C90,148 96,192 120,196 C144,192 150,148 150,118 Z" fill="#4B5D3C"/>
+  </g>
+  <text x="200" y="292" text-anchor="middle" font-family="Fraunces, 'Iowan Old Style', Georgia, 'Times New Roman', serif" font-weight="500" font-size="42" fill="#241B13">NORTH <tspan font-style="italic" font-weight="400" font-size="46" fill="#4B5D3C">&amp;</tspan> OAK</text>
+  <line x1="170" y1="310" x2="230" y2="310" stroke="#A8823C" stroke-width="2"/>
+  <text x="200" y="336" text-anchor="middle" font-family="Archivo, 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="16" letter-spacing="5" fill="#4B5D3C">CAF&#201;</text>
+</svg>
