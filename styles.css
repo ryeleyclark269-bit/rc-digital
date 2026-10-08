@@ -539,3 +539,19 @@ p.intro, .info {
     .reviews { height: 220px; }
     .review-card { font-size: 1.1rem; }
 }
+
+.contact-note {
+    display: block;
+    max-width: 340px;
+    margin: 10px auto 0;
+    font-size: 0.92rem;
+    color: var(--slate-500);
+}
+
+.footer-email {
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-email:hover { text-decoration: underline; }
