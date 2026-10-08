@@ -716,3 +716,75 @@ a.button2 {
 @media (max-width: 720px) {
     #work { grid-template-columns: minmax(0, 320px); }
 }
+
+/* =========================================================
+   Logos & brand design section
+   ========================================================= */
+.branding {
+    background: linear-gradient(135deg, var(--navy-900), var(--navy-700));
+    color: var(--white);
+    padding: 72px 0;
+    text-align: center;
+}
+
+.branding h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.branding .section-intro {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.05rem;
+    max-width: 680px;
+    margin: 0 auto 40px;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    text-align: left;
+}
+
+.brand-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 28px 24px;
+    transition: transform .25s ease, background-color .25s ease;
+}
+
+.brand-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.10);
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke: #8DB4F5;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    margin-bottom: 14px;
+}
+
+.brand-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.brand-card p {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.95rem;
+}
+
+.brand-cta {
+    margin-top: 40px;
+}
+
+.brand-cta .cta-link {
+    display: inline-block;
+}
