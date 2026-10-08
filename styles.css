@@ -706,3 +706,13 @@ a.button2 {
 @media (max-width: 800px) {
     .screens { grid-template-columns: 1fr 1fr; }
 }
+
+/* Centre the two real-work cards */
+#work {
+    grid-template-columns: repeat(2, minmax(0, 320px));
+    justify-content: center;
+}
+
+@media (max-width: 720px) {
+    #work { grid-template-columns: minmax(0, 320px); }
+}
