@@ -788,3 +788,59 @@ a.button2 {
 .brand-cta .cta-link {
     display: inline-block;
 }
+/* Logos we've designed */
+.logo-work-heading {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 56px 0 20px;
+}
+
+.logo-work {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 360px));
+    justify-content: center;
+    gap: 28px;
+}
+
+.logo-tile {
+    margin: 0;
+    text-align: left;
+}
+
+.logo-frame {
+    aspect-ratio: 4 / 3;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+.logo-frame-light { background-color: var(--white); }
+.logo-frame-dark  { background-color: #000000; }
+
+.logo-frame img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.logo-tile figcaption {
+    margin-top: 12px;
+}
+
+.logo-tile figcaption strong {
+    display: block;
+    font-size: 1.05rem;
+}
+
+.logo-tile figcaption span {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.92rem;
+}
+
+@media (max-width: 720px) {
+    .logo-work { grid-template-columns: minmax(0, 360px); }
+}
