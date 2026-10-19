@@ -1299,3 +1299,4 @@ a.button2 {
     .choice-grid { grid-template-columns: 1fr; }
     .enquiry-form { padding: 22px; }
 }
+.label-text { display: block; }
