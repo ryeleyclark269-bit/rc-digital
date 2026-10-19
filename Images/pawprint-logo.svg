@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#E6F4F1"/>
+  <g transform="translate(200 150)" fill="#0F5257">
+    <ellipse cx="0" cy="22" rx="46" ry="38"/>
+    <ellipse cx="-52" cy="-26" rx="17" ry="22" transform="rotate(-18 -52 -26)"/>
+    <ellipse cx="-19" cy="-52" rx="17" ry="23"/>
+    <ellipse cx="19" cy="-52" rx="17" ry="23"/>
+    <ellipse cx="52" cy="-26" rx="17" ry="22" transform="rotate(18 52 -26)"/>
+  </g>
+  <path d="M168 168 q32 22 64 0" fill="none" stroke="#FFC24B" stroke-width="9" stroke-linecap="round"/>
+  <text x="200" y="285" text-anchor="middle" font-family="Fredoka, 'Trebuchet MS', Arial, sans-serif" font-weight="700" font-size="44" fill="#0F5257">Pawprint</text>
+  <text x="200" y="322" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="5" fill="#E07A3F">GROOMING CO.</text>
+</svg>

@@ -844,3 +844,20 @@ a.button2 {
 @media (max-width: 720px) {
     .logo-work { grid-template-columns: minmax(0, 360px); }
 }
+/* Dog grooming example card */
+.job8 {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: transparent;
+    background-color: #E6F4F1;
+    background-image: url("Images/pawprint-logo.svg");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: filter .3s ease;
+}
+
+.job-card:hover .job8 { filter: blur(4px); }

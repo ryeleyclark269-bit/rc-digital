@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pawprint Grooming Co. | Example design by RC Digital</title>
+<meta name="description" content="An example dog grooming website designed by RC Digital: services and prices, gallery, booking enquiries and opening hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #0F5257;
+    --teal-dark: #0A3B3F;
+    --mint: #E6F4F1;
+    --sun: #FFC24B;
+    --coral: #E07A3F;
+    --ink: #1F2D2E;
+    --muted: #5E7173;
+    --white: #FFFFFF;
+    --line: #D3E7E2;
+    --font-display: "Fredoka", "Trebuchet MS", Arial, sans-serif;
+    --font-body: "Nunito", "Segoe UI", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--font-body); color: var(--ink); background: var(--white); line-height: 1.6; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.15; text-wrap: balance; color: var(--teal-dark); }
+  p { margin: 0; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+  /* RC Digital example bar */
+  .example-bar { background: #0B1A33; color: #E2E8F0; font-size: 0.88rem; }
+  .example-bar .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 14px; padding-top: 9px; padding-bottom: 9px; text-align: center; }
+  .example-bar strong { color: #FFFFFF; }
+  .example-bar a { color: #8DB4F5; font-weight: 700; }
+
+  /* Header */
+  header.site { background: var(--white); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+  header.site .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand img { width: 48px; height: 48px; border-radius: 12px; }
+  .brand span { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--teal-dark); line-height: 1; }
+  .brand small { display: block; font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--coral); font-weight: 800; }
+  nav.main { display: flex; align-items: center; gap: 22px; font-weight: 700; }
+  nav.main a { text-decoration: none; color: var(--ink); }
+  nav.main a:hover { color: var(--teal); }
+  .btn { display: inline-block; font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; text-decoration: none; border: none; cursor: pointer; padding: 12px 22px; border-radius: 999px; background: var(--coral); color: var(--white); transition: transform .2s, background-color .2s; }
+  .btn:hover { transform: translateY(-2px); background: #C9672F; }
+  .btn.ghost { background: transparent; color: var(--teal-dark); border: 2px solid var(--teal); }
+  @media (max-width: 760px) { nav.main a:not(.btn) { display: none; } }
+
+  /* Hero */
+  .hero { background: var(--mint); overflow: hidden; }
+  .hero .container { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; padding-top: 64px; padding-bottom: 64px; }
+  .hero .tag { display: inline-block; background: var(--white); color: var(--teal); font-weight: 800; font-size: 0.85rem; padding: 6px 14px; border-radius: 999px; margin-bottom: 18px; }
+  .hero h1 { font-size: clamp(2.3rem, 5vw, 3.6rem); margin-bottom: 18px; }
+  .hero h1 em { font-style: normal; color: var(--coral); }
+  .hero p.lead { font-size: 1.15rem; color: var(--muted); max-width: 46ch; margin-bottom: 26px; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero .facts { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 26px; font-weight: 700; color: var(--teal-dark); font-size: 0.95rem; }
+  .hero .facts span::before { content: "\2713"; color: var(--coral); margin-right: 6px; }
+  .hero-art { position: relative; aspect-ratio: 1 / 1; max-width: 420px; width: 100%; justify-self: center; }
+  .hero-art .blob { position: absolute; inset: 6%; background: var(--sun); border-radius: 46% 54% 42% 58% / 52% 44% 56% 48%; }
+  .hero-art img { position: relative; width: 78%; margin: 11% auto 0; border-radius: 28px; box-shadow: 0 18px 40px rgba(15, 82, 87, 0.25); }
+  @media (max-width: 820px) { .hero .container { grid-template-columns: 1fr; } .hero-art { max-width: 300px; } }
+
+  section { padding: 72px 0; }
+  .section-head { max-width: 640px; margin-bottom: 36px; }
+  .section-head h2 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-bottom: 10px; }
+  .section-head p { color: var(--muted); font-size: 1.05rem; }
+
+  /* Services & prices */
+  .prices { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .price-card { border: 2px solid var(--line); border-radius: 20px; padding: 24px; display: grid; gap: 10px; align-content: start; }
+  .price-card h3 { font-size: 1.3rem; }
+  .price-card p { color: var(--muted); }
+  .price-list { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 6px; }
+  .price-list li { display: flex; justify-content: space-between; gap: 10px; border-top: 1px dashed var(--line); padding-top: 6px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .price-list li span:last-child { color: var(--teal); }
+  .price-card.featured { background: var(--teal); border-color: var(--teal); }
+  .price-card.featured h3, .price-card.featured p, .price-card.featured li { color: var(--white); }
+  .price-card.featured .price-list li { border-top-color: rgba(255, 255, 255, 0.25); }
+  .price-card.featured .price-list li span:last-child { color: var(--sun); }
+  .extras { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .extras span { background: var(--mint); color: var(--teal-dark); font-weight: 700; padding: 8px 14px; border-radius: 999px; font-size: 0.92rem; }
+
+  /* How it works */
+  .how { background: var(--mint); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; counter-reset: step; }
+  .step { background: var(--white); border-radius: 20px; padding: 24px; }
+  .step::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--sun); color: var(--teal-dark); font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; margin-bottom: 12px; }
+  .step h3 { font-size: 1.2rem; margin-bottom: 6px; }
+  .step p { color: var(--muted); }
+
+  /* Gallery */
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .shot { aspect-ratio: 4 / 3; max-width: 100%; border-radius: 18px; display: grid; place-items: center; text-align: center; padding: 16px; font-weight: 800; color: var(--teal-dark); position: relative; overflow: hidden; }
+  .shot small { display: block; font-weight: 600; color: var(--muted); margin-top: 4px; }
+  .shot svg { width: 46px; height: 46px; fill: currentColor; opacity: 0.85; margin: 0 auto 8px; }
+  .shot:nth-child(1) { background: #FFE9C2; }
+  .shot:nth-child(2) { background: var(--mint); }
+  .shot:nth-child(3) { background: #FBE0D2; }
+  .shot:nth-child(4) { background: #E3ECF8; }
+  .note { margin-top: 14px; color: var(--muted); font-size: 0.9rem; }
+
+  /* Reviews */
+  .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .review { border: 2px solid var(--line); border-radius: 20px; padding: 24px; display: grid; gap: 12px; }
+  .stars { color: var(--sun); letter-spacing: 3px; font-size: 1.1rem; }
+  .review p { font-size: 1.02rem; }
+  .review span { font-weight: 800; color: var(--teal); font-size: 0.9rem; }
+
+  /* Booking + info */
+  .book { background: var(--teal); color: var(--white); }
+  .book .container { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: start; }
+  .book h2 { color: var(--white); font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-bottom: 12px; }
+  .book p { color: #CFE6E2; }
+  .info { margin-top: 26px; display: grid; gap: 14px; }
+  .info div { background: rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 16px 18px; }
+  .info h3 { color: var(--sun); font-size: 1.05rem; margin-bottom: 6px; }
+  .hours { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-variant-numeric: tabular-nums; }
+  .hours li { display: flex; justify-content: space-between; gap: 12px; }
+  form.enquiry { background: var(--white); color: var(--ink); border-radius: 22px; padding: 26px; display: grid; gap: 14px; }
+  form.enquiry h3 { font-size: 1.35rem; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  label { display: grid; gap: 5px; font-weight: 700; font-size: 0.92rem; }
+  input, select, textarea { font: inherit; padding: 11px 12px; border: 2px solid var(--line); border-radius: 12px; background: var(--white); color: var(--ink); min-width: 0; }
+  input:focus, select:focus, textarea:focus { border-color: var(--teal); outline: none; }
+  textarea { min-height: 90px; resize: vertical; }
+  .form-msg { font-weight: 700; color: var(--teal); }
+  @media (max-width: 820px) { .book .container { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) { .row { grid-template-columns: 1fr; } }
+
+  /* FAQ */
+  .faq { display: grid; gap: 12px; max-width: 780px; }
+  details { border: 2px solid var(--line); border-radius: 16px; padding: 14px 18px; }
+  summary { cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; color: var(--teal-dark); }
+  details p { margin-top: 10px; color: var(--muted); }
+
+  footer.site { background: var(--teal-dark); color: #BFD8D4; padding: 34px 0; font-size: 0.92rem; }
+  footer.site .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
+  footer.site strong { color: var(--white); }
+  footer.site a { color: var(--sun); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="example-bar">
+  <div class="container">
+    <span><strong>Example design by RC Digital.</strong> Pawprint Grooming Co. is a made-up business.</span>
+    <a href="contacts.html">Get a website like this for your business &rarr;</a>
+  </div>
+</div>
+
+<header class="site">
+  <div class="container">
+    <a href="#top" class="brand"><img src="Images/pawprint-logo.svg" alt="Pawprint Grooming Co. logo"><span>Pawprint<small>GROOMING CO.</small></span></a>
+    <nav class="main" aria-label="Main">
+      <a href="#prices">Prices</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+      <a href="#book" class="btn">Book a groom</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container">
+      <div>
+        <span class="tag">Dog grooming in Pembrokeshire</span>
+        <h1>Happy dogs, <em>fresh coats</em>, no fuss.</h1>
+        <p class="lead">Calm, one-to-one grooming for every breed and size. Your dog gets our full attention from the moment they arrive until you collect them.</p>
+        <div class="actions">
+          <a href="#book" class="btn">Book a groom</a>
+          <a href="#prices" class="btn ghost">See prices</a>
+        </div>
+        <div class="facts">
+          <span>One dog at a time</span>
+          <span>Nervous dogs welcome</span>
+          <span>Fully insured</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="blob"></div>
+        <img src="Images/pawprint-logo.svg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section id="prices">
+    <div class="container">
+      <div class="section-head">
+        <h2>Services &amp; prices</h2>
+        <p>Every groom includes a bath, blow-dry, nail clip, ear clean and a spritz of something nice. Prices depend on size and coat condition.</p>
+      </div>
+      <div class="prices">
+        <div class="price-card">
+          <h3>Bath &amp; Brush</h3>
+          <p>A full wash, dry and brush-through to keep coats healthy between cuts.</p>
+          <ul class="price-list">
+            <li><span>Small</span><span>£25</span></li>
+            <li><span>Medium</span><span>£30</span></li>
+            <li><span>Large</span><span>£38</span></li>
+          </ul>
+        </div>
+        <div class="price-card featured">
+          <h3>Full Groom</h3>
+          <p>Bath, dry, full clip or hand-scissor styled to your dog's breed or your request.</p>
+          <ul class="price-list">
+            <li><span>Small</span><span>£38</span></li>
+            <li><span>Medium</span><span>£45</span></li>
+            <li><span>Large</span><span>£55</span></li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <h3>Puppy Intro</h3>
+          <p>A gentle first visit for puppies under 6 months to get used to the sights and sounds.</p>
+          <ul class="price-list">
+            <li><span>Any size</span><span>£20</span></li>
+            <li><span>Time</span><span>45 mins</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="extras">
+        <span>Nail clip only £8</span>
+        <span>De-shedding treatment +£10</span>
+        <span>Teeth clean +£5</span>
+        <span>Flea bath +£8</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="container">
+      <div class="section-head">
+        <h2>How a visit works</h2>
+        <p>Most grooms take between 1.5 and 3 hours, depending on your dog.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Book</h3><p>Send an enquiry below or give us a call. We'll confirm a time that suits you.</p></div>
+        <div class="step"><h3>Drop off</h3><p>Tell us how you'd like them to look, plus anything we should know about their health or nerves.</p></div>
+        <div class="step"><h3>We groom</h3><p>One dog at a time, with plenty of breaks for nervous or older dogs.</p></div>
+        <div class="step"><h3>Pick up</h3><p>We'll text you when they're ready, with a photo of the finished look.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <h2>Fresh from the grooming table</h2>
+        <p>Before-and-after photos of recent grooms.</p>
+      </div>
+      <div class="gallery">
+        <div class="shot"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 13c-2.8 0-5 2-5 4.2 0 1.6 1.4 2.3 2.6 2 1-.2 1.6-.6 2.4-.6s1.4.4 2.4.6c1.2.3 2.6-.4 2.6-2C17 15 14.8 13 12 13zM5.5 12.5c1.1-.2 1.7-1.6 1.3-3S5.1 7.3 4 7.5 2.3 9.1 2.7 10.5s1.7 2.2 2.8 2zm13 0c1.1.2 2.4-.6 2.8-2s-.2-2.8-1.3-3-2.4.6-2.8 2 .2 2.8 1.3 3zM9 8.5c1.2 0 2-1.3 2-2.8S10.2 3 9 3 7 4.2 7 5.7 7.8 8.5 9 8.5zm6 0c1.2 0 2-1.3 2-2.8S16.2 3 15 3s-2 1.2-2 2.7.8 2.8 2 2.8z"/></svg>Cockapoo full groom<small>Photo goes here</small></div></div>
+        <div class="shot"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 13c-2.8 0-5 2-5 4.2 0 1.6 1.4 2.3 2.6 2 1-.2 1.6-.6 2.4-.6s1.4.4 2.4.6c1.2.3 2.6-.4 2.6-2C17 15 14.8 13 12 13zM5.5 12.5c1.1-.2 1.7-1.6 1.3-3S5.1 7.3 4 7.5 2.3 9.1 2.7 10.5s1.7 2.2 2.8 2zm13 0c1.1.2 2.4-.6 2.8-2s-.2-2.8-1.3-3-2.4.6-2.8 2 .2 2.8 1.3 3zM9 8.5c1.2 0 2-1.3 2-2.8S10.2 3 9 3 7 4.2 7 5.7 7.8 8.5 9 8.5zm6 0c1.2 0 2-1.3 2-2.8S16.2 3 15 3s-2 1.2-2 2.7.8 2.8 2 2.8z"/></svg>Spaniel bath &amp; tidy<small>Photo goes here</small></div></div>
+        <div class="shot"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 13c-2.8 0-5 2-5 4.2 0 1.6 1.4 2.3 2.6 2 1-.2 1.6-.6 2.4-.6s1.4.4 2.4.6c1.2.3 2.6-.4 2.6-2C17 15 14.8 13 12 13zM5.5 12.5c1.1-.2 1.7-1.6 1.3-3S5.1 7.3 4 7.5 2.3 9.1 2.7 10.5s1.7 2.2 2.8 2zm13 0c1.1.2 2.4-.6 2.8-2s-.2-2.8-1.3-3-2.4.6-2.8 2 .2 2.8 1.3 3zM9 8.5c1.2 0 2-1.3 2-2.8S10.2 3 9 3 7 4.2 7 5.7 7.8 8.5 9 8.5zm6 0c1.2 0 2-1.3 2-2.8S16.2 3 15 3s-2 1.2-2 2.7.8 2.8 2 2.8z"/></svg>Shih Tzu puppy cut<small>Photo goes here</small></div></div>
+        <div class="shot"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 13c-2.8 0-5 2-5 4.2 0 1.6 1.4 2.3 2.6 2 1-.2 1.6-.6 2.4-.6s1.4.4 2.4.6c1.2.3 2.6-.4 2.6-2C17 15 14.8 13 12 13zM5.5 12.5c1.1-.2 1.7-1.6 1.3-3S5.1 7.3 4 7.5 2.3 9.1 2.7 10.5s1.7 2.2 2.8 2zm13 0c1.1.2 2.4-.6 2.8-2s-.2-2.8-1.3-3-2.4.6-2.8 2 .2 2.8 1.3 3zM9 8.5c1.2 0 2-1.3 2-2.8S10.2 3 9 3 7 4.2 7 5.7 7.8 8.5 9 8.5zm6 0c1.2 0 2-1.3 2-2.8S16.2 3 15 3s-2 1.2-2 2.7.8 2.8 2 2.8z"/></svg>Labrador de-shed<small>Photo goes here</small></div></div>
+      </div>
+      <p class="note">On your website, this is where your own before-and-after photos go.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>What owners say</h2>
+        <p>Sample reviews. On your website, these would be your real Google or Facebook reviews.</p>
+      </div>
+      <div class="reviews">
+        <div class="review"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Our nervous rescue usually hates being groomed, but came out calm, happy and looking gorgeous."</p><span>Sample review</span></div>
+        <div class="review"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Booking was easy and we got a photo as soon as she was ready. Best groom she's had."</p><span>Sample review</span></div>
+        <div class="review"><div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Really gentle with our old boy, took plenty of breaks. We won't go anywhere else now."</p><span>Sample review</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="container">
+      <div>
+        <h2>Book a groom</h2>
+        <p>Send us a few details and we'll get back to you to confirm a time. New customers welcome.</p>
+        <div class="info">
+          <div>
+            <h3>Opening hours</h3>
+            <ul class="hours">
+              <li><span>Monday to Friday</span><span>8:30am - 5pm</span></li>
+              <li><span>Saturday</span><span>9am - 1pm</span></li>
+              <li><span>Sunday</span><span>Closed</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Find us</h3>
+            <p>Your address, a map link and parking information go here.</p>
+          </div>
+        </div>
+      </div>
+      <form class="enquiry" id="enquiry" novalidate>
+        <h3>Booking enquiry</h3>
+        <div class="row">
+          <label for="owner">Your name<input id="owner" name="owner" type="text" required></label>
+          <label for="phone">Phone<input id="phone" name="phone" type="tel" required></label>
+        </div>
+        <div class="row">
+          <label for="dog">Dog's name &amp; breed<input id="dog" name="dog" type="text" placeholder="e.g. Bella, Cockapoo"></label>
+          <label for="service">Service<select id="service" name="service"><option>Full Groom</option><option>Bath &amp; Brush</option><option>Puppy Intro</option><option>Nail clip only</option></select></label>
+        </div>
+        <label for="notes">Anything we should know?<textarea id="notes" name="notes" placeholder="Nerves, health, preferred days..."></textarea></label>
+        <button class="btn" type="submit">Send enquiry</button>
+        <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-head"><h2>Questions</h2></div>
+      <div class="faq">
+        <details><summary>How often should my dog be groomed?</summary><p>Most dogs benefit from a groom every 6 to 8 weeks. Curly and long coats may need it every 4 to 6 weeks.</p></details>
+        <details><summary>Does my dog need to be vaccinated?</summary><p>Yes. We ask that all dogs are up to date with their vaccinations for everyone's safety.</p></details>
+        <details><summary>My dog is nervous. Can you help?</summary><p>Absolutely. We groom one dog at a time, take breaks whenever needed and never rush. Let us know when you book.</p></details>
+        <details><summary>How do I pay?</summary><p>Cash or card on collection.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <span><strong>Pawprint Grooming Co.</strong> &middot; an example design. This business is made up.</span>
+    <span>Website by <a href="index.html">RC Digital</a> &middot; <a href="contacts.html">Get one like this</a></span>
+  </div>
+</footer>
+
+<script>
+  // Demo form: shows a message instead of sending anything.
+  document.getElementById('enquiry').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('form-msg').textContent = 'This is an example form. On your website, enquiries would go straight to your email.';
+  });
+</script>
+</body>
+</html>
