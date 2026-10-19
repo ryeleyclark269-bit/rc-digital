@@ -995,3 +995,8 @@ a.button2 {
 .values-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 1000px) { .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .values-grid { grid-template-columns: 1fr; } }
+/* How we work: use the full width (overrides the two-column job-body layout) */
+.job-body .about-steps { display: block; }
+.about-steps .feature-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1000px) { .about-steps .feature-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .about-steps .feature-list { grid-template-columns: 1fr; } }
