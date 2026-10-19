@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contact Us | RC Digital</title>
+    <meta name="description" content="Get a free, no-obligation quote from RC Digital for a website, app, logo or branding for your Pembrokeshire business.">
     <link href="styles.css" rel="stylesheet">
 </head>
 
@@ -14,22 +15,115 @@
     <nav class="site-nav" aria-label="Main">
         <a href="about.html" class="nav-btn">About Us</a>
         <a href="contacts.html" class="nav-btn" aria-current="page">Contact</a>
-        <a href="contacts.html" class="nav-btn primary">Get a Free Quote</a>
+        <a href="contacts.html#enquiry" class="nav-btn primary">Get a Free Quote</a>
     </nav>
 </header>
 
-<div class="contactpage">
-    <h2>Contact Us Today</h2>
-    <p class="contacth2">Get a Free Quotation from one of our experienced professionals!</p>
-</div>
+<section class="contact-hero">
+    <div class="container">
+        <span class="eyebrow">Contact us</span>
+        <h2>Let's talk about your business</h2>
+        <p>Tell us what you need and we'll get back to you with a free, no-obligation quote. Whether it's a new website, an app, a logo or a full brand refresh, we'd love to hear from you.</p>
+        <ul class="trust-list">
+            <li>Free, no-obligation quote</li>
+            <li>Friendly, local service</li>
+            <li>Websites, apps &amp; branding</li>
+        </ul>
+    </div>
+</section>
 
-<div class="contactinfo">
-    <a class="contact-item" href="mailto:rcdigitaluk@gmail.com?subject=Website%20enquiry">
-        <span class="label">Email us</span>
-        <span class="value">rcdigitaluk@gmail.com</span>
-        <span class="contact-note">Tell us about your business and what you need. We'll get back to you with a free quote.</span>
-    </a>
-</div>
+<section class="contact-main">
+    <div class="container">
+        <form class="enquiry-form" id="enquiry" novalidate>
+            <h3>Send us an enquiry</h3>
+            <p class="form-intro">Fill this in and press <strong>Send enquiry</strong>. Your email app will open with everything ready to send to us.</p>
+
+            <div class="form-row">
+                <label for="f-name">Your name <span class="req">*</span>
+                    <input id="f-name" name="name" type="text" autocomplete="name" required>
+                </label>
+                <label for="f-business">Business name
+                    <input id="f-business" name="business" type="text" autocomplete="organization">
+                </label>
+            </div>
+            <div class="form-row">
+                <label for="f-email">Email <span class="req">*</span>
+                    <input id="f-email" name="email" type="email" autocomplete="email" required>
+                </label>
+                <label for="f-phone">Phone <span class="optional">(optional)</span>
+                    <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+                </label>
+            </div>
+
+            <fieldset>
+                <legend>What can we help with?</legend>
+                <div class="choice-grid">
+                    <label class="choice"><input type="checkbox" name="need" value="A new website"> <span>A new website</span></label>
+                    <label class="choice"><input type="checkbox" name="need" value="Updating my website"> <span>Updating my website</span></label>
+                    <label class="choice"><input type="checkbox" name="need" value="An app"> <span>An app</span></label>
+                    <label class="choice"><input type="checkbox" name="need" value="Logo or branding"> <span>Logo or branding</span></label>
+                    <label class="choice"><input type="checkbox" name="need" value="Banners, posters or flyers"> <span>Banners, posters or flyers</span></label>
+                    <label class="choice"><input type="checkbox" name="need" value="Not sure yet"> <span>Not sure yet</span></label>
+                </div>
+            </fieldset>
+
+            <label for="f-message">Tell us about your business <span class="req">*</span>
+                <textarea id="f-message" name="message" rows="5" placeholder="What does your business do, and what would you like your website or design to help with?" required></textarea>
+            </label>
+
+            <button type="submit" class="submit-btn">Send enquiry</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <p class="form-small">We'll only use your details to reply to your enquiry. See our <a href="privacy.html">Privacy Policy</a>.</p>
+        </form>
+
+        <aside class="contact-side">
+            <div class="contact-card">
+                <h3>Email us directly</h3>
+                <a class="email-link" href="mailto:rcdigitaluk@gmail.com?subject=Website%20enquiry">rcdigitaluk@gmail.com</a>
+                <button type="button" class="copy-btn" id="copy-email">Copy email address</button>
+                <p>Prefer to write your own message? Email us any time and we'll get back to you as soon as we can.</p>
+            </div>
+
+            <div class="contact-card light">
+                <h3>What happens next</h3>
+                <ol class="next-steps">
+                    <li><strong>We reply</strong><span>We read every enquiry and get back to you personally.</span></li>
+                    <li><strong>Free chat</strong><span>We talk through your business, your goals and your budget.</span></li>
+                    <li><strong>Your quote</strong><span>You get a clear written quote. No pressure, no obligation.</span></li>
+                </ol>
+            </div>
+
+            <div class="contact-card light">
+                <h3>Where we work</h3>
+                <p>We're based in Pembrokeshire and work with local businesses across the county, including Haverfordwest, Pembroke, Pembroke Dock, Milford Haven, Tenby and Narberth.</p>
+            </div>
+        </aside>
+    </div>
+</section>
+
+<section class="contact-faq">
+    <div class="container">
+        <h3>Common questions</h3>
+        <div class="faq-list">
+            <details>
+                <summary>How much does a website cost?</summary>
+                <p>Every business is different, so every project is quoted individually. Tell us what you need and we'll send you a clear, free quote with no obligation.</p>
+            </details>
+            <details>
+                <summary>How long does it take?</summary>
+                <p>It depends on the size of the project. Simple sites can be ready quickly, and we'll agree a timeline with you before any work starts.</p>
+            </details>
+            <details>
+                <summary>I don't have a logo or photos yet. Is that a problem?</summary>
+                <p>Not at all. We can design your logo and branding too, and help you choose photos that show your business at its best.</p>
+            </details>
+            <details>
+                <summary>Will my website work on phones?</summary>
+                <p>Yes. Every website we build is designed to look great and load quickly on phones, tablets and computers.</p>
+            </details>
+        </div>
+    </div>
+</section>
 
 <!-- below is the footer, only add what is needed for the footer -->
 <div class="buttons">
@@ -42,5 +136,52 @@
     <p><a class="privpolicy" href="privacy.html">Privacy Policy</a></p>
     <p><a class="terms" href="terms.html">Terms and Conditions</a></p>
 </footer>
+
+<script>
+(function () {
+    var EMAIL = 'rcdigitaluk@gmail.com';
+    var form = document.getElementById('enquiry');
+    var status = document.getElementById('form-status');
+
+    function val(id) { return document.getElementById(id).value.trim(); }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = val('f-name'), email = val('f-email'), message = val('f-message');
+        var missing = [];
+        if (!name) missing.push('your name');
+        if (!email || email.indexOf('@') === -1) missing.push('a valid email');
+        if (!message) missing.push('a few words about your business');
+        if (missing.length) {
+            status.className = 'form-status error';
+            status.textContent = 'Please add ' + missing.join(', ') + '.';
+            return;
+        }
+        var needs = Array.prototype.map.call(form.querySelectorAll('input[name="need"]:checked'), function (c) { return c.value; });
+        var business = val('f-business'), phone = val('f-phone');
+        var subject = 'Website enquiry' + (business ? ' from ' + business : ' from ' + name);
+        var body = [
+            'Name: ' + name,
+            'Business: ' + (business || '-'),
+            'Email: ' + email,
+            'Phone: ' + (phone || '-'),
+            'Interested in: ' + (needs.length ? needs.join(', ') : '-'),
+            '',
+            message
+        ].join('\n');
+        window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        status.className = 'form-status ok';
+        status.textContent = 'Your email app should now be open with your enquiry ready. Just press send. If nothing opened, email us at ' + EMAIL + '.';
+    });
+
+    document.getElementById('copy-email').addEventListener('click', function () {
+        var btn = this;
+        function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = 'Copy email address'; }, 2000); }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(EMAIL).then(function () { done('Copied!'); }, function () { done(EMAIL); });
+        } else { done(EMAIL); }
+    });
+})();
+</script>
 </body>
 </html>
