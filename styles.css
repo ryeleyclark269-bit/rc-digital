@@ -991,3 +991,7 @@ a.button2 {
 @media (max-width: 800px) {
     .about-story .container { grid-template-columns: 1fr; }
 }
+/* Value cards: 4 across, 2 x 2 on tablets, 1 column on phones */
+.values-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1000px) { .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .values-grid { grid-template-columns: 1fr; } }
