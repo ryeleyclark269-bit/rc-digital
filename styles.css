@@ -1300,3 +1300,8 @@ a.button2 {
     .enquiry-form { padding: 22px; }
 }
 .label-text { display: block; }
+
+/* Spam trap on the contact form: kept off-screen so people never see it */
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.enquiry-form { position: relative; }
+.submit-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }

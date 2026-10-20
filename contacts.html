@@ -36,7 +36,7 @@
     <div class="container">
         <form class="enquiry-form" id="enquiry" novalidate>
             <h3>Send us an enquiry</h3>
-            <p class="form-intro">Fill this in and press <strong>Send enquiry</strong>. Your email app will open with everything ready to send to us.</p>
+            <p class="form-intro">Fill this in and press <strong>Send enquiry</strong>, and we'll get back to you with a free quote.</p>
 
             <div class="form-row">
                 <label for="f-name"><span class="label-text">Your name <span class="req">*</span></span>
@@ -70,6 +70,11 @@
             <label for="f-message"><span class="label-text">Tell us about your business <span class="req">*</span></span>
                 <textarea id="f-message" name="message" rows="5" placeholder="What does your business do, and what would you like your website or design to help with?" required></textarea>
             </label>
+
+            <!-- Spam trap: hidden from people, bots fill it in -->
+            <div class="hp-field" aria-hidden="true">
+                <label for="f-website">Leave this empty<input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></label>
+            </div>
 
             <button type="submit" class="submit-btn">Send enquiry</button>
             <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
@@ -159,19 +164,54 @@
         }
         var needs = Array.prototype.map.call(form.querySelectorAll('input[name="need"]:checked'), function (c) { return c.value; });
         var business = val('f-business'), phone = val('f-phone');
-        var subject = 'Website enquiry' + (business ? ' from ' + business : ' from ' + name);
-        var body = [
-            'Name: ' + name,
-            'Business: ' + (business || '-'),
-            'Email: ' + email,
-            'Phone: ' + (phone || '-'),
-            'Interested in: ' + (needs.length ? needs.join(', ') : '-'),
-            '',
-            message
-        ].join('\n');
-        window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-        status.className = 'form-status ok';
-        status.textContent = 'Your email app should now be open with your enquiry ready. Just press send. If nothing opened, email us at ' + EMAIL + '.';
+
+        // Fallback: open the visitor's email app with the enquiry filled in.
+        function openEmailApp() {
+            var subject = 'Website enquiry' + (business ? ' from ' + business : ' from ' + name);
+            var body = [
+                'Name: ' + name,
+                'Business: ' + (business || '-'),
+                'Email: ' + email,
+                'Phone: ' + (phone || '-'),
+                'Interested in: ' + (needs.length ? needs.join(', ') : '-'),
+                '',
+                message
+            ].join('\n');
+            window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            status.className = 'form-status ok';
+            status.textContent = 'Your email app should now be open with your enquiry ready. Just press send. If nothing opened, email us at ' + EMAIL + '.';
+        }
+
+        // Send through the website (Resend). While that's switched off, the server
+        // answers "not_configured" and we fall back to the email app.
+        var btn = form.querySelector('.submit-btn');
+        btn.disabled = true; btn.textContent = 'Sending...';
+        status.className = 'form-status'; status.textContent = '';
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: name, business: business, email: email, phone: phone, needs: needs, message: message, website: val('f-website') })
+        }).then(function (r) {
+            return r.json().catch(function () { return {}; }).then(function (data) { return { status: r.status, data: data }; });
+        }).then(function (res) {
+            if (res.status === 200 && res.data.ok) {
+                form.reset();
+                status.className = 'form-status ok';
+                status.textContent = 'Thanks ' + name + ', your message has been sent. We\'ll get back to you as soon as we can.';
+            } else if (res.status === 400) {
+                status.className = 'form-status error';
+                status.textContent = res.data.message || 'Please check your details and try again.';
+            } else if (res.status === 503 || res.status === 404 || res.status === 405) {
+                openEmailApp();
+            } else {
+                status.className = 'form-status error';
+                status.textContent = 'Sorry, your message could not be sent just now. Please email us at ' + EMAIL + '.';
+            }
+        }).catch(function () {
+            openEmailApp();
+        }).then(function () {
+            btn.disabled = false; btn.textContent = 'Send enquiry';
+        });
     });
 
     document.getElementById('copy-email').addEventListener('click', function () {
